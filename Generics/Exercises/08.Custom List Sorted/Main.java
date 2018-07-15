@@ -1,4 +1,4 @@
-package generic_exercises.custom_list_07;
+package generic_exercises.custom_list_sorted_08;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
 
         CustomList<String> list = new CustomList<>();
 
@@ -47,6 +46,8 @@ public class Main {
             } else if ("Print".equals(commandArgs)) {
                 System.out.println(list);
 
+            } else if ("Sort".equals(commandArgs)) {
+                list.sort();
             }
             inputLine = reader.readLine();
         }

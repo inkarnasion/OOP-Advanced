@@ -1,13 +1,11 @@
-package generic_exercises.custom_list_07;
+package generic_exercises.custom_list_sorted_08;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CustomList<T extends Comparable<T>> {
-    List<T> lists;
+   private List<T> lists;
 
     public CustomList() {
         this.lists = new ArrayList<>();
@@ -22,7 +20,14 @@ public class CustomList<T extends Comparable<T>> {
     }
 
     public boolean contains(T element) {
-        return this.lists.contains(element);
+        for (Iterator<T> iterator = this.lists.iterator();
+             iterator.hasNext(); ) {
+            T item = iterator.next();
+            if (item.compareTo(element) == 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void swap(int firstIndex, int secondIndex) {
@@ -48,6 +53,9 @@ public class CustomList<T extends Comparable<T>> {
     public T getMin() {
         return Collections.min(this.lists);
     }
+    public void sort() {
+        Collections.sort(this.lists);
+    }
 
     @Override
     public String toString() {
@@ -57,4 +65,6 @@ public class CustomList<T extends Comparable<T>> {
                 .collect(Collectors.joining());
         return sb.trim();
     }
+
+
 }
