@@ -15,7 +15,9 @@ import callofduty.io.ConsoleReader;
 import callofduty.io.ConsoleWriter;
 import callofduty.missionmanager.MissionManagerImpl;
 
-
+/*/
+Java OOP Advanced Exam Solution created by Todor Kamenov
+ */
 
 public class Main {
 	public static void main(String[] args) throws IOException {
